@@ -21,7 +21,6 @@ PKGS=(
     gedit
     gedit-plugins
     geoclue
-    git
     gnome-keyring
     gst-libav
     gst-plugins-bad
