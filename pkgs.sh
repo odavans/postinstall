@@ -13,6 +13,7 @@ PKGS=(
     crow-translate
     engrampa
     fish
+    firefox
     flatpak
     galculator
     gamemode
