@@ -34,3 +34,11 @@ touch "$FISH_CONF_DIR/config.fish"
 if ! grep -q "set -g fish_greeting" "$FISH_CONF_DIR/config.fish"; then
     echo "set -g fish_greeting" >> "$FISH_CONF_DIR/config.fish"
 fi
+
+for size in 16x16 22x22 24x24; do
+  mkdir -p "$HOME/.local/share/icons/Papirus/$size/symbolic/apps"
+
+  ln -sf \
+  /usr/share/icons/hicolor/symbolic/apps/org.coolercontrol.CoolerControl-symbolic.svg \
+  "$HOME/.local/share/icons/Papirus/$size/symbolic/apps/org.coolercontrol.CoolerControl-symbolic.svg"
+done
