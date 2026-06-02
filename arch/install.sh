@@ -6,7 +6,7 @@ mkdir -p "$(dirname "$REPO_DIR")"
 
 git clone https://github.com/odavans/postinstall.git "$REPO_DIR"
 
-cd "$REPO_DIR"
+cd "$REPO_DIR/arch"
 
 sudo -v
 
