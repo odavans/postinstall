@@ -11,6 +11,7 @@ PKGS=(
     bzip3
     cabextract
     cdrtools
+    celluloid
     cpio
     crow-translate
     dpkg
