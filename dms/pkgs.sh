@@ -35,6 +35,7 @@ PKGS=(
     libreoffice-fresh
     linux-zen-headers
     liquidctl
+    loupe
     lrzip
     mangohud
     nano
