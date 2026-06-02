@@ -12,8 +12,8 @@ PKGS=(
     cpio
     crow-translate
     engrampa
-    fish
     firefox
+    fish
     flatpak
     galculator
     gamemode
