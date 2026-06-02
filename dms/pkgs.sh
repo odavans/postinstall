@@ -21,6 +21,7 @@ PKGS=(
     gamemode
     geoclue
     gnome-keyring
+    gnome-text-editor
     gvfs
     gvfs-mtp
     kdeconnect
