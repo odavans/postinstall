@@ -36,6 +36,7 @@ PKGS=(
     lrzip
     mangohud
     nano
+    nautilus
     nvidia-open-dkms
     nvidia-settings
     nvidia-utils
