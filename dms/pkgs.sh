@@ -1,0 +1,76 @@
+#!/bin/bash
+
+PKGS=(
+    7zip
+    android-tools
+    android-udev
+    archlinux-appstream-data
+    base-devel
+    binutils
+    breeze-cursors
+    bzip3
+    cabextract
+    cdrtools
+    cpio
+    crow-translate
+    dpkg
+    file-roller
+    firefox
+    fish
+    flatpak
+    gamemode
+    geoclue
+    gnome-keyring
+    gvfs
+    gvfs-mtp
+    kdeconnect
+    lhasa
+    lib32-gamemode
+    lib32-mangohud
+    lib32-nvidia-utils
+    libappindicator
+    libayatana-appindicator
+    libreoffice-fresh
+    linux-zen-headers
+    liquidctl
+    lrzip
+    mangohud
+    nano
+    nvidia-open-dkms
+    nvidia-settings
+    nvidia-utils
+    onnxruntime-cpu
+    os-prober
+    p7zip
+    papirus-icon-theme
+    pkgfile
+    python
+    qbittorrent
+    qt5-base
+    qt6-tools
+    rpmextract
+    squashfs-tools
+    sshfs
+    steam
+    telegram-desktop
+    tesseract-data-eng
+    tesseract-data-rus
+    tesseract-data-ukr
+    unace
+    unrar
+    unzip
+    vivaldi
+    vivaldi-ffmpeg-codecs
+    webkit2gtk-4.1
+    webkitgtk-6.0
+    wl-clipboard
+    wtype
+    xdg-desktop-portal
+    xdg-desktop-portal-gnome
+    xdg-desktop-portal-gtk
+    xdg-user-dirs-gtk
+    xorg-fonts-misc
+    zip
+)
+
+pacman -S --noconfirm --needed "${PKGS[@]}"
