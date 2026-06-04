@@ -20,6 +20,7 @@ PKGS=(
     fish
     flatpak
     gamemode
+    gamescope
     geoclue
     gnome-keyring
     gnome-text-editor
