@@ -49,6 +49,7 @@ PKGS=(
     p7zip
     papirus-icon-theme
     pkgfile
+    proton-vpn-gtk-app
     python
     qbittorrent
     qt5-base
