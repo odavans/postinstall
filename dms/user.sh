@@ -4,7 +4,6 @@ USER_DIRS=(
     "$HOME/.config/autostart"
     "$HOME/.config/MangoHud"
     "$HOME/.config/xdg-desktop-portal"
-    "$HOME/.local/bin"
 )
 
 mkdir -p "${USER_DIRS[@]}"
