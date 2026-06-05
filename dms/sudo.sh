@@ -29,12 +29,21 @@ sensors-detect --auto > /dev/null
 systemctl enable coolercontrold
 systemctl enable pkgfile-update.timer
 
-cat <<EOF > /etc/modprobe.d/nvidia.conf
+cat << 'EOF' > /etc/modprobe.d/nvidia.conf
 options nvidia_drm modeset=1
 options nvidia NVreg_EnableResizableBar=1
 EOF
 
 mkinitcpio -P
+
+cat << 'EOF' > /etc/modprobe.d/rtw88.conf
+options rtw88_core disable_lps_deep=y
+EOF
+
+cat << 'EOF' > /etc/NetworkManager/conf.d/99-disable-wifi-powersave.conf
+[connection]
+wifi.powersave = 2
+EOF
 
 if [ -f /etc/default/grub ]; then
     sed -i 's/^#\(GRUB_DISABLE_OS_PROBER=false\)/\1/' /etc/default/grub
