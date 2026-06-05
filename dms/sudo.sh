@@ -45,6 +45,18 @@ cat << 'EOF' > /etc/NetworkManager/conf.d/99-disable-wifi-powersave.conf
 wifi.powersave = 2
 EOF
 
+cat << 'EOF' > /etc/pam.d/greetd
+#%PAM-1.0
+
+auth       required     pam_securetty.so
+auth       requisite    pam_nologin.so
+auth       include      system-local-login
+auth       optional     pam_gnome_keyring.so
+account    include      system-local-login
+session    include      system-local-login
+session    optional     pam_gnome_keyring.so auto_start
+EOF
+
 if [ -f /etc/default/grub ]; then
     sed -i 's/^#\(GRUB_DISABLE_OS_PROBER=false\)/\1/' /etc/default/grub
     grub-mkconfig -o /boot/grub/grub.cfg
