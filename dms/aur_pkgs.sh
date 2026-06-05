@@ -2,7 +2,6 @@
 
 AUR_PKGS=(
     coolercontrol-bin
-    coolercontrold-bin
     dsearch-bin
     heroic-games-launcher-bin
     hypr-kdeconnect-fix-git
