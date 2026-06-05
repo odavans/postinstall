@@ -1,8 +1,9 @@
 #!/bin/bash
 
 USER_DIRS=(
-    "$HOME/.config/MangoHud"
     "$HOME/.config/autostart"
+    "$HOME/.config/MangoHud"
+    "$HOME/.config/xdg-desktop-portal"
     "$HOME/.local/bin"
 )
 
@@ -24,6 +25,15 @@ if [[ -f "$CONF_FILE" ]]; then
         -e 's/^#\s*toggle_hud_position=Shift_R+F1/toggle_hud_position=Shift_R+F1/' \
         "$CONF_FILE"
 fi
+
+cat << 'EOF' > "$HOME/.config/xdg-desktop-portal/portals.conf"
+[preferred]
+default=gnome;gtk;
+org.freedesktop.impl.portal.Access=gtk
+org.freedesktop.impl.portal.Notification=gtk
+org.freedesktop.impl.portal.Secret=gnome-keyring
+org.freedesktop.impl.portal.RemoteDesktop=hypr-kdeconnect
+EOF
 
 FISH_CONF_DIR="$HOME/.config/fish"
 
