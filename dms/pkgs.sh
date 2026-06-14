@@ -29,10 +29,10 @@ PKGS=(
     kdeconnect
     lhasa
     lib32-gamemode
+    lib32-libappindicator
     lib32-mangohud
     lib32-nvidia-utils
     libappindicator
-    libayatana-appindicator
     libreoffice-fresh
     linux-zen-headers
     liquidctl
