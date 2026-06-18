@@ -15,6 +15,8 @@ SUBSYSTEM=="usb", ATTRS{idVendor}=="3434", MODE="0666"
 SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3434", MODE="0666"
 SUBSYSTEM=="usb", ATTRS{idVendor}=="373b", MODE="0666"
 SUBSYSTEM=="hidraw", ATTRS{idVendor}=="373b", MODE="0666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="1915", MODE="0666"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1915", MODE="0666"
 EOF
 
 cat <<EOF > /etc/udev/rules.d/51-android.rules
