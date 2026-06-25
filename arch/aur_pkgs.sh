@@ -2,7 +2,6 @@
 
 AUR_PKGS=(
     coolercontrol-bin
-    coolercontrold-bin
     heroic-games-launcher-bin
     matcha-gtk-theme
     menulibre
