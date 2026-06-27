@@ -15,6 +15,7 @@ PKGS=(
     cpio
     crow-translate
     dpkg
+    fastfetch
     file-roller
     firefox
     fish
