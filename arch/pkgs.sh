@@ -12,6 +12,7 @@ PKGS=(
     cpio
     crow-translate
     engrampa
+    fastfetch
     firefox
     fish
     flatpak
