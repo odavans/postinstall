@@ -26,6 +26,7 @@ PKGS=(
     gnome-calculator
     gnome-keyring
     gnome-text-editor
+    grsync
     gvfs
     gvfs-mtp
     iw
@@ -45,6 +46,8 @@ PKGS=(
     mangohud
     nano
     nautilus
+    ntfs-3g
+    ntfsprogs
     nvidia-open-dkms
     nvidia-settings
     nvidia-utils
