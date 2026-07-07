@@ -22,6 +22,7 @@ PKGS=(
     gedit-plugins
     geoclue
     gnome-keyring
+    grsync
     gst-libav
     gst-plugins-bad
     gst-plugins-ugly
@@ -42,6 +43,8 @@ PKGS=(
     mangohud
     nano
     network-manager-applet
+    ntfs-3g
+    ntfsprogs
     nvidia-open-dkms
     nvidia-settings
     nvidia-utils
