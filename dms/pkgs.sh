@@ -30,8 +30,6 @@ PKGS=(
     grsync
     gvfs
     gvfs-mtp
-    iw
-    iwd
     kdeconnect
     lhasa
     lib32-gamemode
