@@ -14,7 +14,6 @@ PKGS=(
     celluloid
     cpio
     crow-translate
-    ddcutil
     dpkg
     fastfetch
     file-roller
