@@ -29,7 +29,6 @@ gpasswd -a "$USER_NAME" plugdev
 
 sensors-detect --auto > /dev/null
 systemctl enable coolercontrold
-systemctl enable iwd
 systemctl enable pkgfile-update.timer
 
 cat << 'EOF' > /etc/modprobe.d/nvidia.conf
@@ -38,32 +37,6 @@ options nvidia NVreg_EnableResizableBar=1
 EOF
 
 mkinitcpio -P
-
-mkdir -p /etc/NetworkManager/conf.d/
-cat <<EOF > /etc/NetworkManager/conf.d/iwd.conf
-[device]
-wifi.backend=iwd
-wifi.scan-rand-mac-address=no
-
-[connection]
-wifi.cloned-mac-address=permanent
-ethernet.cloned-mac-address=permanent
-EOF
-
-mkdir -p /etc/iwd/
-cat <<EOF > /etc/iwd/main.conf
-[General]
-AddressRandomization=disabled
-EOF
-
-cat << 'EOF' > /etc/modprobe.d/rtw88.conf
-options rtw88_core disable_lps_deep=y
-EOF
-
-cat << 'EOF' > /etc/NetworkManager/conf.d/99-disable-wifi-powersave.conf
-[connection]
-wifi.powersave = 2
-EOF
 
 cat << 'EOF' > /etc/pam.d/greetd
 #%PAM-1.0
