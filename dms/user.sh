@@ -4,7 +4,7 @@ USER_DIRS=(
     "$HOME/.config/autostart"
     "$HOME/.config/MangoHud"
     "$HOME/.config/xdg-desktop-portal"
-    "$HOME/.steam/steam"
+    "$HOME/.local/share/Steam"
 )
 
 mkdir -p "${USER_DIRS[@]}"
@@ -66,4 +66,4 @@ for size in 16x16 22x22 24x24; do
          "$HOME/.local/share/icons/Papirus-Light/$size/panel/org.telegram.desktop-mute-symbolic.svg"
 done
 
-echo "unShaderBackgroundProcessingThreads 12" > "$HOME/.steam/steam/steam_dev.cfg"
+echo "unShaderBackgroundProcessingThreads 12" > "$HOME/.local/share/Steam/steam_dev.cfg"
