@@ -68,8 +68,6 @@ PKGS=(
     unace
     unrar
     unzip
-    vivaldi
-    vivaldi-ffmpeg-codecs
     webkit2gtk-4.1
     webkitgtk-6.0
     wl-clipboard
