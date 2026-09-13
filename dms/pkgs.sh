@@ -73,7 +73,7 @@ PKGS=(
     wl-clipboard
     wtype
     xdg-desktop-portal
-    xdg-desktop-portal-gnome
+    #xdg-desktop-portal-gnome
     xdg-desktop-portal-gtk
     xdg-user-dirs-gtk
     xorg-fonts-misc
