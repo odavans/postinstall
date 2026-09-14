@@ -27,6 +27,9 @@ EOF
 groupadd -f plugdev
 gpasswd -a "$USER_NAME" plugdev
 
+groupadd -f i2c
+gpasswd -a "$USER_NAME" i2c
+
 sensors-detect --auto > /dev/null
 systemctl enable coolercontrold
 systemctl enable pkgfile-update.timer
