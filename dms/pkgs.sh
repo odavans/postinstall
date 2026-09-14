@@ -10,10 +10,12 @@ PKGS=(
     breeze-cursors
     bzip3
     cabextract
+    cava
     cdrtools
     celluloid
     cpio
     crow-translate
+    cups-pk-helper
     dpkg
     fastfetch
     file-roller
@@ -29,7 +31,9 @@ PKGS=(
     grsync
     gvfs
     gvfs-mtp
+    i2c-tools
     kdeconnect
+    kimageformats
     lhasa
     lib32-gamemode
     lib32-mangohud
@@ -52,6 +56,7 @@ PKGS=(
     os-prober
     p7zip
     papirus-icon-theme
+    power-profiles-daemon
     pkgfile
     python
     qbittorrent
