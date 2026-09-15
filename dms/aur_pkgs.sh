@@ -10,6 +10,7 @@ AUR_PKGS=(
     protonup-qt-bin
     rustdesk-bin
     shelly-bin
+    shelly-flatpak-backend-bin
 )
 
 paru -S --noconfirm --needed "${AUR_PKGS[@]}"
