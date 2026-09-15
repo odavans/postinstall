@@ -25,6 +25,7 @@ PKGS=(
     gamemode
     gamescope
     geoclue
+    gnome-boxes
     gnome-calculator
     gnome-keyring
     gnome-text-editor
