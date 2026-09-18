@@ -32,6 +32,7 @@ PKGS=(
     grsync
     gvfs
     gvfs-mtp
+    hyprland-guiutils
     i2c-tools
     kdeconnect
     kimageformats
