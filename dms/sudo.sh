@@ -37,6 +37,8 @@ systemctl enable pkgfile-update.timer
 cat << 'EOF' > /etc/modprobe.d/nvidia.conf
 options nvidia_drm modeset=1
 options nvidia NVreg_EnableResizableBar=1
+options nvidia NVreg_UseKernelSuspendNotifiers=1
+options nvidia NVreg_TemporaryFilePath=/var/tmp
 EOF
 
 mkinitcpio -P
