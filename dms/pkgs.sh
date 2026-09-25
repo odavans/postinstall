@@ -82,7 +82,7 @@ PKGS=(
     xdg-desktop-portal
     xdg-desktop-portal-gnome
     xdg-desktop-portal-gtk
-    xdg-desktop-portal-hyprland
+    #xdg-desktop-portal-hyprland
     xdg-user-dirs-gtk
     xorg-fonts-misc
     zip
