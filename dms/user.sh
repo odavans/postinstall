@@ -26,21 +26,23 @@ if [[ -f "$CONF_FILE" ]]; then
         "$CONF_FILE"
 fi
 
+cat << 'EOF' > "$HOME/.config/xdg-desktop-portal/portals.conf"
+[preferred]
+default=gnome;gtk;
+org.freedesktop.impl.portal.Access=gtk
+org.freedesktop.impl.portal.Notification=gtk
+org.freedesktop.impl.portal.Secret=gnome-keyring
+org.freedesktop.impl.portal.RemoteDesktop=hypr-kdeconnect
+EOF
+
 #cat << 'EOF' > "$HOME/.config/xdg-desktop-portal/portals.conf"
 #[preferred]
-#default=gnome;gtk;
-#org.freedesktop.impl.portal.Access=gtk
-#org.freedesktop.impl.portal.Notification=gtk
-#org.freedesktop.impl.portal.Secret=gnome-keyring
+#default=gtk
+#org.freedesktop.impl.portal.ScreenCast=hyprland
+#org.freedesktop.impl.portal.Screenshot=hyprland
+#org.freedesktop.impl.portal.GlobalShortcuts=hyprland
 #org.freedesktop.impl.portal.RemoteDesktop=hypr-kdeconnect
 #EOF
-
-[preferred]
-default=gtk
-org.freedesktop.impl.portal.ScreenCast=hyprland
-org.freedesktop.impl.portal.Screenshot=hyprland
-org.freedesktop.impl.portal.GlobalShortcuts=hyprland
-org.freedesktop.impl.portal.RemoteDesktop=hypr-kdeconnect
 
 FISH_CONF_DIR="$HOME/.config/fish"
 
