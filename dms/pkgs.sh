@@ -49,13 +49,13 @@ PKGS=(
     mangohud
     nano
     nautilus
-    ntfs-3g
-    ntfsprogs
+    #ntfs-3g
+    #ntfsprogs
     nvidia-open-dkms
     nvidia-settings
     nvidia-utils
     onnxruntime-cpu
-    os-prober
+    #os-prober
     p7zip
     papirus-icon-theme
     power-profiles-daemon
