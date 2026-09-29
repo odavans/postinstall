@@ -55,10 +55,10 @@ session    include      system-local-login
 session    optional     pam_gnome_keyring.so auto_start
 EOF
 
-if [ -f /etc/default/grub ]; then
-    sed -i 's/^#\(GRUB_DISABLE_OS_PROBER=false\)/\1/' /etc/default/grub
-    grub-mkconfig -o /boot/grub/grub.cfg
-fi
+#if [ -f /etc/default/grub ]; then
+#    sed -i 's/^#\(GRUB_DISABLE_OS_PROBER=false\)/\1/' /etc/default/grub
+#    grub-mkconfig -o /boot/grub/grub.cfg
+#fi
 
 echo "ntsync" > /etc/modules-load.d/ntsync.conf
 
