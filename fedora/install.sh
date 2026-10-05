@@ -12,7 +12,7 @@ sudo -v
 
 sudo bash sudo.sh
 
-bash user.sh
+#bash user.sh
 
 cd ~
 
