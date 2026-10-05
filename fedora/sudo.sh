@@ -3,12 +3,18 @@
 USER_NAME=${SUDO_USER:-$(whoami)}
 USER_HOME=$(eval echo "~$USER_NAME")
 
+sed -i '/^metalink=/ s/$/\&country=PL,CZ,SK,DE,AT,NL/' /etc/yum.repos.d/fedora*.repo
 dnf install -y fedora-workstation-repositories
-dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+dnf install \
+  https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
+  https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+sed -i -e 's|^metalink=|#metalink=|' \
+  -e 's|^#baseurl=http://download1.rpmfusion.org|baseurl=https://download1.rpmfusion.org|' \
+  /etc/yum.repos.d/rpmfusion-*.repo
 dnf install -y dnf-plugins-core
 dnf copr enable -y codifryed/CoolerControl
 dnf copr enable -y peterwu/rendezvous
-dnf makecache
+dnf clean all && sudo dnf makecache
 dnf update -y
 dnf swap -y ffmpeg-free ffmpeg --allowerasing
 dnf install -y adw-gtk3-theme akmod-nvidia android-tools baobab bibata-cursor-themes coolercontrol evince f44-backgrounds-gnome fedora-workstation-backgrounds file-roller fish flatpak gamemode gamescope gcc gdm gnome-backgrounds gnome-calculator gnome-console gnome-control-center gnome-disk-utility gnome-extensions-app gnome-logs gnome-shell gnome-software gnome-system-monitor gnome-text-editor gnome-tweaks grsync gstreamer1-libav gstreamer1-plugins-bad-freeworld gstreamer1-plugins-ugly iwd kernel-devel kernel-headers libva-utils libvirt liquidctl lm_sensors loupe make mangohud nautilus NetworkManager-wifi nvidia-vaapi-driver papirus-icon-theme steam virt-manager wl-clipboard xdg-desktop-portal-gnome xorg-x11-drv-nvidia-cuda
