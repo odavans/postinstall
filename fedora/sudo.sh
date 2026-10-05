@@ -3,15 +3,14 @@
 USER_NAME=${SUDO_USER:-$(whoami)}
 USER_HOME=$(eval echo "~$USER_NAME")
 
+echo "max_parallel_downloads=10" >> /etc/dnf/dnf.conf
+echo "excludemirror=*.ru, *.by, *.ua, *ip-connect.info*" >> /etc/dnf/dnf.conf
 dnf install -y fedora-workstation-repositories
-dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+dnf install -y https://ftp.icm.edu.pl/pub/Linux/dist/rpmfusion/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://ftp.icm.edu.pl/pub/Linux/dist/rpmfusion/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 dnf install -y dnf-plugins-core
 dnf config-manager --set-enabled google-chrome
 dnf copr enable -y codifryed/CoolerControl
 dnf copr enable -y peterwu/rendezvous
-sed -i '/^metalink=/!b; /country=/b; s/$/\&country=PL,DE,CZ,NL/' /etc/yum.repos.d/*.repo
-echo "max_parallel_downloads=10" >> /etc/dnf/dnf.conf
-echo "fastestmirror=True" >> /etc/dnf/dnf.conf
 dnf makecache
 dnf update -y
 dnf swap -y ffmpeg-free ffmpeg --allowerasing
