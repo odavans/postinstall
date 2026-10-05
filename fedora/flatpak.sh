@@ -4,6 +4,7 @@ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.f
 flatpak install -y flathub com.brave.Browser
 flatpak install -y flathub com.heroicgameslauncher.hgl
 flatpak install -y flathub com.protonvpn.www
+flatpak install -y flathub io.bassi.Amberol
 flatpak install -y flathub net.davidotek.pupgui2
 flatpak install -y flathub org.libreoffice.LibreOffice
 flatpak install -y flathub org.mozilla.firefox
