@@ -3,6 +3,10 @@
 USER_NAME=${SUDO_USER:-$(whoami)}
 USER_HOME=$(eval echo "~$USER_NAME")
 
+sed -i 's/\(metalink=.*\)/\1\&country=PL,DE,CZ,NL/' /etc/yum.repos.d/fedora*.repo
+echo "max_parallel_downloads=10" >> /etc/dnf/dnf.conf
+echo "fastestmirror=True" >> /etc/dnf/dnf.conf
+
 dnf install -y fedora-workstation-repositories
 dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 dnf install -y dnf-plugins-core
