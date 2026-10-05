@@ -5,21 +5,11 @@ USER_HOME=$(eval echo "~$USER_NAME")
 
 echo "max_parallel_downloads=10" >> /etc/dnf/dnf.conf
 dnf install -y fedora-workstation-repositories
-dnf install -y \
-  https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
-  https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-
-for f in /etc/yum.repos.d/rpmfusion*.repo; do
-    sed -i -E \
-        's/&country=[^&[:space:]]*//g; /^metalink=.*mirrors\.rpmfusion\.org/ s/$/\&country=DE,PL,CZ,NL/' \
-        "$f"
-done
+dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 dnf install -y dnf-plugins-core
 dnf copr enable -y codifryed/CoolerControl
 dnf copr enable -y peterwu/rendezvous
-
-dnf clean all
-dnf makecache --refresh
+dnf makecache
 dnf update -y
 
 dnf swap -y ffmpeg-free ffmpeg --allowerasing
