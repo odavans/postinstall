@@ -5,6 +5,7 @@ USER_DIRS=(
     "$HOME/.config/fish"
     "$HOME/.config/MangoHud"
     "$HOME/.local/share/Steam"
+    "$HOME/.var/app/org.telegram.desktop/data/TelegramDesktop"
 )
 
 mkdir -p "${USER_DIRS[@]}"
