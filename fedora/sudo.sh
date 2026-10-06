@@ -37,9 +37,12 @@ cat <<'EOF' > /etc/NetworkManager/conf.d/iwd.conf
 wifi.backend=iwd
 EOF
 
+getent group i2c || groupadd i2c
+getent group libvirt || groupadd libvirt
 getent group plugdev || groupadd plugdev
-usermod -aG plugdev "$USER_NAME"
+usermod -aG i2c "$USER_NAME"
 usermod -aG libvirt "$USER_NAME"
+usermod -aG plugdev "$USER_NAME"
 
 chsh -s /usr/bin/fish "$USER_NAME"
 
@@ -49,5 +52,8 @@ systemctl enable coolercontrold
 systemctl enable iwd
 
 echo "ntsync" > /etc/modules-load.d/ntsync.conf
+
+cat <<EOF > /etc/udev/rules.d/45-i2c.rules
+SUBSYSTEM=="i2c-dev", KERNEL=="i2c-[0-9]*", GROUP="i2c", MODE="0660"
 
 firewall-cmd --permanent --add-service=kdeconnect
