@@ -30,3 +30,5 @@ fi
 echo "set -g fish_greeting" >> "$HOME/.config/fish/config.fish"
 
 echo "unShaderBackgroundProcessingThreads 12" > "$HOME/.local/share/Steam/steam_dev.cfg"
+
+gsettings set com.github.stunkymonkey.nautilus-open-any-terminal terminal kitty
