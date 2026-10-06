@@ -52,8 +52,10 @@ systemctl enable coolercontrold
 systemctl enable iwd
 
 echo "ntsync" > /etc/modules-load.d/ntsync.conf
+echo "i2c-dev" > /etc/modules-load.d/i2c-dev.conf
 
 cat <<EOF > /etc/udev/rules.d/45-i2c.rules
 SUBSYSTEM=="i2c-dev", KERNEL=="i2c-[0-9]*", GROUP="i2c", MODE="0660"
+EOF
 
 firewall-cmd --permanent --add-service=kdeconnect
