@@ -45,3 +45,5 @@ PKGS=(
 )
 
 dnf install -y "${PKGS[@]}"
+
+dnf swap -y ffmpeg-free ffmpeg --allowerasing
