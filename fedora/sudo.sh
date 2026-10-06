@@ -47,3 +47,5 @@ sensors-detect --auto
 
 systemctl enable coolercontrold
 systemctl enable iwd
+
+echo "ntsync" > /etc/modules-load.d/ntsync.conf
