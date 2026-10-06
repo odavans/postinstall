@@ -49,3 +49,5 @@ systemctl enable coolercontrold
 systemctl enable iwd
 
 echo "ntsync" > /etc/modules-load.d/ntsync.conf
+
+firewall-cmd --permanent --add-service=kdeconnect
