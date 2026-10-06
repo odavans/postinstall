@@ -21,6 +21,7 @@ PKGS=(
     gstreamer1-plugins-ugly
     gvfs
     gvfs-mtp
+    i2c-tools
     iwd
     kde-connect
     kernel-devel
