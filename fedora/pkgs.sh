@@ -22,6 +22,7 @@ PKGS=(
     gvfs
     gvfs-mtp
     iwd
+    kde-connect
     kernel-devel
     kernel-headers
     libva-utils
