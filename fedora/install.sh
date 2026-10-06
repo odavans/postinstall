@@ -12,6 +12,8 @@ sudo -v
 
 sudo bash repo.sh
 
+sudo bash pkgs.sh
+
 sudo bash sudo.sh
 
 bash user.sh
