@@ -32,3 +32,24 @@ echo "set -g fish_greeting" >> "$HOME/.config/fish/config.fish"
 echo "unShaderBackgroundProcessingThreads 12" > "$HOME/.local/share/Steam/steam_dev.cfg"
 
 gsettings set com.github.stunkymonkey.nautilus-open-any-terminal terminal kitty
+
+for size in 16x16 22x22 24x24; do
+  mkdir -p "$HOME/.local/share/icons/Papirus/$size/symbolic/apps"
+
+  ln -sf \
+  /usr/share/icons/hicolor/symbolic/apps/org.coolercontrol.CoolerControl-symbolic.svg \
+  "$HOME/.local/share/icons/Papirus/$size/symbolic/apps/org.coolercontrol.CoolerControl-symbolic.svg"
+done
+
+for size in 16x16 22x22 24x24; do
+  mkdir -p "$HOME/.local/share/icons/Papirus-Light/$size/panel"
+
+  ln -sf /usr/share/icons/Papirus-Light/$size/panel/telegram-panel.svg \
+         "$HOME/.local/share/icons/Papirus-Light/$size/panel/org.telegram.desktop-symbolic.svg"
+
+  ln -sf /usr/share/icons/Papirus-Light/$size/panel/telegram-attention-panel.svg \
+         "$HOME/.local/share/icons/Papirus-Light/$size/panel/org.telegram.desktop-attention-symbolic.svg"
+
+  ln -sf /usr/share/icons/Papirus-Light/$size/panel/telegram-mute-panel.svg \
+         "$HOME/.local/share/icons/Papirus-Light/$size/panel/org.telegram.desktop-mute-symbolic.svg"
+done
