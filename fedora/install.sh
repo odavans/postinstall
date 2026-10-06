@@ -10,9 +10,13 @@ cd "$REPO_DIR/fedora"
 
 sudo -v
 
+sudo bash repo.sh
+
 sudo bash sudo.sh
 
-#bash user.sh
+bash user.sh
+
+bash flatpak.sh
 
 cd ~
 
