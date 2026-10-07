@@ -59,3 +59,8 @@ SUBSYSTEM=="i2c-dev", KERNEL=="i2c-[0-9]*", GROUP="i2c", MODE="0660"
 EOF
 
 firewall-cmd --permanent --add-service=kdeconnect
+
+cat <<'EOF' > /etc/sddm.conf.d/20-x11.conf
+[General]
+DisplayServer=x11
+EOF
