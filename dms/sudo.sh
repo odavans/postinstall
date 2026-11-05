@@ -58,7 +58,7 @@ if [ -f /etc/default/grub ]; then
     grub-mkconfig -o /boot/grub/grub.cfg
 fi
 
-#echo "ntsync" > /etc/modules-load.d/ntsync.conf
+echo "ntsync" > /etc/modules-load.d/ntsync.conf
 
 pkgfile -u
 
