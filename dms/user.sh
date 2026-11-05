@@ -35,15 +35,6 @@ org.freedesktop.impl.portal.Secret=gnome-keyring
 org.freedesktop.impl.portal.RemoteDesktop=hypr-kdeconnect
 EOF
 
-#cat << 'EOF' > "$HOME/.config/xdg-desktop-portal/portals.conf"
-#[preferred]
-#default=gtk
-#org.freedesktop.impl.portal.ScreenCast=hyprland
-#org.freedesktop.impl.portal.Screenshot=hyprland
-#org.freedesktop.impl.portal.GlobalShortcuts=hyprland
-#org.freedesktop.impl.portal.RemoteDesktop=hypr-kdeconnect
-#EOF
-
 FISH_CONF_DIR="$HOME/.config/fish"
 
 mkdir -p "$FISH_CONF_DIR"
