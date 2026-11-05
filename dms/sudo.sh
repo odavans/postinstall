@@ -10,7 +10,7 @@ polkit.addRule(function(action, subject) {
 });
 EOF
 
-cat <<EOF > /etc/udev/rules.d/50-keychron.rules
+cat <<EOF > /etc/udev/rules.d/50-hid.rules
 SUBSYSTEM=="usb", ATTRS{idVendor}=="3434", MODE="0666"
 SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3434", MODE="0666"
 SUBSYSTEM=="usb", ATTRS{idVendor}=="373b", MODE="0666"
@@ -34,14 +34,14 @@ sensors-detect --auto > /dev/null
 systemctl enable coolercontrold
 systemctl enable pkgfile-update.timer
 
-cat << 'EOF' > /etc/modprobe.d/nvidia.conf
-options nvidia_drm modeset=1
-options nvidia NVreg_EnableResizableBar=1
-options nvidia NVreg_UseKernelSuspendNotifiers=1
-options nvidia NVreg_TemporaryFilePath=/var/tmp
-EOF
+#cat << 'EOF' > /etc/modprobe.d/nvidia.conf
+#options nvidia_drm modeset=1
+#options nvidia NVreg_EnableResizableBar=1
+#options nvidia NVreg_UseKernelSuspendNotifiers=1
+#options nvidia NVreg_TemporaryFilePath=/var/tmp
+#EOF
 
-mkinitcpio -P
+#mkinitcpio -P
 
 cat << 'EOF' > /etc/pam.d/greetd
 #%PAM-1.0
@@ -55,12 +55,12 @@ session    include      system-local-login
 session    optional     pam_gnome_keyring.so auto_start
 EOF
 
-#if [ -f /etc/default/grub ]; then
-#    sed -i 's/^#\(GRUB_DISABLE_OS_PROBER=false\)/\1/' /etc/default/grub
-#    grub-mkconfig -o /boot/grub/grub.cfg
-#fi
+if [ -f /etc/default/grub ]; then
+    sed -i 's/^#\(GRUB_DISABLE_OS_PROBER=false\)/\1/' /etc/default/grub
+    grub-mkconfig -o /boot/grub/grub.cfg
+fi
 
-echo "ntsync" > /etc/modules-load.d/ntsync.conf
+#echo "ntsync" > /etc/modules-load.d/ntsync.conf
 
 pkgfile -u
 
