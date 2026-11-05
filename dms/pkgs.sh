@@ -13,6 +13,7 @@ PKGS=(
     cava
     cdrtools
     celluloid
+    coolercontrol
     cpio
     crow-translate
     cups-pk-helper
