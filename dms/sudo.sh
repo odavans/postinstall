@@ -39,7 +39,7 @@ options nvidia_drm modeset=1
 options nvidia NVreg_EnableResizableBar=1
 EOF
 
-#mkinitcpio -P
+mkinitcpio -P
 
 cat << 'EOF' > /etc/pam.d/greetd
 #%PAM-1.0
