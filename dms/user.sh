@@ -2,6 +2,7 @@
 
 USER_DIRS=(
     "$HOME/.config/autostart"
+    "$HOME/.config/environment.d"
     "$HOME/.config/MangoHud"
     "$HOME/.config/xdg-desktop-portal"
     "$HOME/.local/share/Steam"
@@ -65,5 +66,7 @@ for size in 16x16 22x22 24x24; do
   ln -sf /usr/share/icons/Papirus-Light/$size/panel/telegram-mute-panel.svg \
          "$HOME/.local/share/icons/Papirus-Light/$size/panel/org.telegram.desktop-mute-symbolic.svg"
 done
+
+echo "__GL_SHADER_DISK_CACHE_SIZE=12000000000" > "$HOME/.config/environment.d/gaming.conf"
 
 echo "unShaderBackgroundProcessingThreads 12" > "$HOME/.local/share/Steam/steam_dev.cfg"
