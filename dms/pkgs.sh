@@ -49,8 +49,8 @@ PKGS=(
     mangohud
     nano
     nautilus
-    #ntfs-3g
-    #ntfsprogs
+    ntfs-3g
+    ntfsprogs
     nvidia-open-dkms
     nvidia-settings
     nvidia-utils
@@ -82,7 +82,6 @@ PKGS=(
     xdg-desktop-portal
     xdg-desktop-portal-gnome
     xdg-desktop-portal-gtk
-    #xdg-desktop-portal-hyprland
     xdg-user-dirs-gtk
     xorg-fonts-misc
     zip
