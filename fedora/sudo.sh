@@ -38,10 +38,8 @@ wifi.backend=iwd
 EOF
 
 getent group i2c || groupadd i2c
-getent group libvirt || groupadd libvirt
 getent group plugdev || groupadd plugdev
 usermod -aG i2c "$USER_NAME"
-usermod -aG libvirt "$USER_NAME"
 usermod -aG plugdev "$USER_NAME"
 
 chsh -s /usr/bin/fish "$USER_NAME"
@@ -59,8 +57,3 @@ SUBSYSTEM=="i2c-dev", KERNEL=="i2c-[0-9]*", GROUP="i2c", MODE="0660"
 EOF
 
 firewall-cmd --permanent --add-service=kdeconnect
-
-cat <<'EOF' > /etc/sddm.conf.d/20-x11.conf
-[General]
-DisplayServer=x11
-EOF
