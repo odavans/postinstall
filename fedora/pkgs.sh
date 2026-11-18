@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 PKGS=(
     akmod-nvidia
     android-tools
