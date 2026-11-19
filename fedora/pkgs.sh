@@ -48,3 +48,5 @@ PKGS=(
     xorg-x11-drv-nvidia-cuda
     xorg-x11-server-Xorg
 )
+
+dnf install -y "${PKGS[@]}"
