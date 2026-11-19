@@ -9,6 +9,7 @@ PKGS=(
     evince
     file-roller
     fish
+    flatpak
     gamemode
     gamescope
     gcc
