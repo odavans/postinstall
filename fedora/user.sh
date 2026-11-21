@@ -5,6 +5,7 @@ USER_DIRS=(
     "$HOME/.config/environment.d"
     "$HOME/.config/fish"
     "$HOME/.config/MangoHud"
+    "$HOME/.config/xdg-desktop-portal"
     "$HOME/.local/share/Steam"
     "$HOME/.var/app/org.telegram.desktop/data/TelegramDesktop"
 )
@@ -56,3 +57,12 @@ for size in 16x16 22x22 24x24; do
   ln -sf /usr/share/icons/Papirus-Light/$size/panel/telegram-mute-panel.svg \
          "$HOME/.local/share/icons/Papirus-Light/$size/panel/org.telegram.desktop-mute-symbolic.svg"
 done
+
+cat <<EOF > ~/.config/xdg-desktop-portal/portals.conf
+[preferred]
+default=gnome;gtk;
+org.freedesktop.impl.portal.Access=gtk
+org.freedesktop.impl.portal.Notification=gtk
+org.freedesktop.impl.portal.Secret=gnome-keyring
+org.freedesktop.impl.portal.RemoteDesktop=hypr-kdeconnect
+EOF
