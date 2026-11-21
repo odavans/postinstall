@@ -31,7 +31,6 @@ PKGS=(
     kernel-headers
     libva-nvidia-driver
     libva-utils
-    libvirt
     liquidctl
     lm_sensors
     loupe
