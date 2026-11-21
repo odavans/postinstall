@@ -6,7 +6,6 @@ PKGS=(
     breeze-cursor-theme
     coolercontrol
     cups-pk-helper
-    evince
     file-roller
     fish
     flatpak
@@ -38,15 +37,17 @@ PKGS=(
     mangohud
     nautilus
     nautilus-open-any-terminal
+    papers
     papirus-icon-theme
     power-profiles-daemon
     seahorse
     steam
     wl-clipboard
     xdg-desktop-portal-gnome
+    xdg-desktop-portal-gtk
     xdg-user-dirs
     xorg-x11-drv-nvidia-cuda
-    xorg-x11-server-Xorg
+    xwayland-satellite
 )
 
 dnf install -y "${PKGS[@]}"
