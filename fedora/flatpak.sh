@@ -8,6 +8,7 @@ flatpak install -y flathub \
   org.mozilla.firefox \
   com.github.tchx84.Flatseal \
   com.heroicgameslauncher.hgl \
+  io.github.flattool.Ignition \
   org.libreoffice.LibreOffice \
   com.protonvpn.www \
   net.davidotek.pupgui2 \
