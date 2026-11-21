@@ -37,7 +37,7 @@ PKGS=(
     make
     mangohud
     #nautilus
-    nautilus-open-any-terminal
+    #nautilus-open-any-terminal
     papers
     papirus-icon-theme
     power-profiles-daemon
