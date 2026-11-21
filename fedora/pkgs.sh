@@ -17,6 +17,7 @@ PKGS=(
     gnome-keyring-pam
     gnome-software
     gnome-text-editor
+    google-noto-emoji-fonts
     grsync
     gstreamer1-libav
     gstreamer1-plugins-bad-freeworld
