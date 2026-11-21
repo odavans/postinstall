@@ -36,7 +36,7 @@ PKGS=(
     loupe
     make
     mangohud
-    nautilus
+    #nautilus
     nautilus-open-any-terminal
     papers
     papirus-icon-theme
@@ -46,7 +46,7 @@ PKGS=(
     wl-clipboard
     xdg-desktop-portal-gnome
     xdg-desktop-portal-gtk
-    xdg-user-dirs
+    #xdg-user-dirs
     xorg-x11-drv-nvidia-cuda
     xwayland-satellite
 )
