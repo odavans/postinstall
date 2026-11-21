@@ -45,10 +45,8 @@ PKGS=(
     steam
     wl-clipboard
     xdg-desktop-portal-gnome
-    xdg-desktop-portal-gtk
     xdg-user-dirs
     xorg-x11-drv-nvidia-cuda
-    xwayland-satellite
 )
 
 dnf install -y "${PKGS[@]}"
