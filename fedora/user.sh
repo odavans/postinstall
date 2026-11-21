@@ -2,6 +2,7 @@
 
 USER_DIRS=(
     "$HOME/.config/autostart"
+    "$HOME/.config/environment.d"
     "$HOME/.config/fish"
     "$HOME/.config/MangoHud"
     "$HOME/.local/share/Steam"
@@ -28,6 +29,8 @@ if [[ -f "$CONF_FILE" ]]; then
 fi
 
 echo "set -g fish_greeting" >> "$HOME/.config/fish/config.fish"
+
+echo "__GL_SHADER_DISK_CACHE_SIZE=12000000000" > "$HOME/.config/environment.d/gaming.conf"
 
 echo "unShaderBackgroundProcessingThreads 12" > "$HOME/.local/share/Steam/steam_dev.cfg"
 
