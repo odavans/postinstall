@@ -46,7 +46,7 @@ PKGS=(
     wl-clipboard
     xdg-desktop-portal-gnome
     xdg-desktop-portal-gtk
-    #xdg-user-dirs
+    xdg-user-dirs
     xorg-x11-drv-nvidia-cuda
     xwayland-satellite
 )
