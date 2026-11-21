@@ -34,7 +34,7 @@ echo "__GL_SHADER_DISK_CACHE_SIZE=12000000000" > "$HOME/.config/environment.d/ga
 
 echo "unShaderBackgroundProcessingThreads 12" > "$HOME/.local/share/Steam/steam_dev.cfg"
 
-gsettings set com.github.stunkymonkey.nautilus-open-any-terminal terminal kitty
+#gsettings set com.github.stunkymonkey.nautilus-open-any-terminal terminal kitty
 
 for size in 16x16 22x22 24x24; do
   mkdir -p "$HOME/.local/share/icons/Papirus/$size/symbolic/apps"
