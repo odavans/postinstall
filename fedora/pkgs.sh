@@ -15,7 +15,7 @@ PKGS=(
     gnome-calculator
     gnome-keyring
     gnome-keyring-pam
-    gnome-software
+    #gnome-software
     gnome-text-editor
     google-noto-emoji-fonts
     grsync
@@ -43,6 +43,7 @@ PKGS=(
     power-profiles-daemon
     seahorse
     steam
+    topgrade
     wl-clipboard
     xdg-desktop-portal-gnome
     xdg-user-dirs
