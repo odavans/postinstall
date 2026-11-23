@@ -31,6 +31,7 @@ groupadd -f plugdev
 usermod -aG i2c,plugdev "$USER_NAME"
 
 sensors-detect --auto > /dev/null
+
 systemctl enable coolercontrold
 systemctl enable pkgfile-update.timer
 
