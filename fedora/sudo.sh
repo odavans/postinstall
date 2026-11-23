@@ -37,10 +37,9 @@ cat <<'EOF' > /etc/NetworkManager/conf.d/iwd.conf
 wifi.backend=iwd
 EOF
 
-getent group i2c || groupadd i2c
-getent group plugdev || groupadd plugdev
-usermod -aG i2c "$USER_NAME"
-usermod -aG plugdev "$USER_NAME"
+groupadd -f i2c
+groupadd -f plugdev
+usermod -aG i2c,plugdev "$USER_NAME"
 
 chsh -s /usr/bin/fish "$USER_NAME"
 
