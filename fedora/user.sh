@@ -58,7 +58,7 @@ for size in 16x16 22x22 24x24; do
          "$HOME/.local/share/icons/Papirus-Light/$size/panel/org.telegram.desktop-mute-symbolic.svg"
 done
 
-cat <<EOF > ~/.config/xdg-desktop-portal/portals.conf
+cat <<EOF> ~/.config/xdg-desktop-portal/portals.conf
 [preferred]
 default=gnome;gtk;
 org.freedesktop.impl.portal.Access=gtk
