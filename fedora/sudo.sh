@@ -43,7 +43,7 @@ usermod -aG i2c,plugdev "$USER_NAME"
 
 chsh -s /usr/bin/fish "$USER_NAME"
 
-sensors-detect --auto
+sensors-detect --auto > /dev/null
 
 systemctl enable coolercontrold
 systemctl enable iwd
