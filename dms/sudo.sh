@@ -1,5 +1,8 @@
 #!/bin/bash
 
+USER_NAME=${SUDO_USER:-$(whoami)}
+USER_HOME=$(eval echo "~$USER_NAME")
+
 cat <<EOF > /etc/polkit-1/rules.d/10-udisks2.rules
 polkit.addRule(function(action, subject) {
     if ((action.id == "org.freedesktop.udisks2.filesystem-mount-system" ||
@@ -24,11 +27,9 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", MODE="0666", GROUP="plugdev"
 SUBSYSTEM=="usb", ATTR{idVendor}=="2717", MODE="0666", GROUP="plugdev"
 EOF
 
-groupadd -f plugdev
-gpasswd -a "$USER_NAME" plugdev
-
 groupadd -f i2c
-gpasswd -a "$USER_NAME" i2c
+groupadd -f plugdev
+usermod -aG i2c,plugdev "$USER_NAME"
 
 sensors-detect --auto > /dev/null
 systemctl enable coolercontrold
