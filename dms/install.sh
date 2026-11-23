@@ -16,7 +16,7 @@ bash paru.sh
 
 bash aur_pkgs.sh
 
-sudo USER_NAME="$(whoami)" bash sudo.sh
+sudo bash sudo.sh
 
 bash user.sh
 
