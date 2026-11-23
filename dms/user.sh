@@ -27,7 +27,7 @@ if [[ -f "$CONF_FILE" ]]; then
         "$CONF_FILE"
 fi
 
-cat << 'EOF' > "$HOME/.config/xdg-desktop-portal/portals.conf"
+cat <<EOF> "$HOME/.config/xdg-desktop-portal/portals.conf"
 [preferred]
 default=gnome;gtk;
 org.freedesktop.impl.portal.Access=gtk
