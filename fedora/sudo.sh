@@ -1,7 +1,6 @@
 #!/bin/bash
 
 USER_NAME=${SUDO_USER:-$(whoami)}
-USER_HOME=$(eval echo "~$USER_NAME")
 
 cat <<EOF> /etc/polkit-1/rules.d/10-udisks2.rules
 polkit.addRule(function(action, subject) {
