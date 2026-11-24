@@ -45,12 +45,12 @@ sensors-detect --auto > /dev/null
 systemctl enable coolercontrold
 systemctl enable iwd
 
-cat <<'EOF' > /etc/modprobe.d/nvidia.conf
-options nvidia_drm modeset=1
-options nvidia NVreg_EnableResizableBar=1
-EOF
+#cat <<'EOF' > /etc/modprobe.d/nvidia.conf
+#options nvidia_drm modeset=1
+#options nvidia NVreg_EnableResizableBar=1
+#EOF
 
-mkinitcpio -P
+#mkinitcpio -P
 
 cat <<'EOF' > /etc/pam.d/greetd
 #%PAM-1.0
@@ -69,7 +69,7 @@ if [ -f /etc/default/grub ]; then
     grub-mkconfig -o /boot/grub/grub.cfg
 fi
 
-echo "ntsync" > /etc/modules-load.d/ntsync.conf
+#echo "ntsync" > /etc/modules-load.d/ntsync.conf
 echo "i2c-dev" > /etc/modules-load.d/i2c-dev.conf
 
 cat <<'EOF' > /etc/udev/rules.d/45-i2c.rules
