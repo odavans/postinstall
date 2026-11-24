@@ -43,14 +43,15 @@ usermod -aG i2c,plugdev "$USER_NAME"
 sensors-detect --auto > /dev/null
 
 systemctl enable coolercontrold
+systemctl enable greetd
 systemctl enable iwd
 
-#cat <<'EOF' > /etc/modprobe.d/nvidia.conf
-#options nvidia_drm modeset=1
-#options nvidia NVreg_EnableResizableBar=1
-#EOF
+cat <<'EOF' > /etc/modprobe.d/nvidia.conf
+options nvidia_drm modeset=1
+options nvidia NVreg_EnableResizableBar=1
+EOF
 
-#mkinitcpio -P
+mkinitcpio -P
 
 cat <<'EOF' > /etc/pam.d/greetd
 #%PAM-1.0
@@ -64,12 +65,22 @@ session    include      system-local-login
 session    optional     pam_gnome_keyring.so auto_start
 EOF
 
-#if [ -f /etc/default/grub ]; then
-#    sed -i 's/^#\(GRUB_DISABLE_OS_PROBER=false\)/\1/' /etc/default/grub
-#    grub-mkconfig -o /boot/grub/grub.cfg
-#fi
+if [ -f /etc/default/grub ]; then
+    sed -i 's/^#\(GRUB_DISABLE_OS_PROBER=false\)/\1/' /etc/default/grub
 
-#echo "ntsync" > /etc/modules-load.d/ntsync.conf
+    for param in "GRUB_DISABLE_UEFI_FIRMWARE=true" "GRUB_DISABLE_BOOTNEXT=true"; do
+        key="${param%%=*}"
+        if grep -qE "^#?${key}=" /etc/default/grub; then
+            sed -i "s|^#\?${key}=.*|${param}|" /etc/default/grub
+        else
+            echo "${param}" >> /etc/default/grub
+        fi
+    done
+
+    grub-mkconfig -o /boot/grub/grub.cfg
+fi
+
+echo "ntsync" > /etc/modules-load.d/ntsync.conf
 echo "i2c-dev" > /etc/modules-load.d/i2c-dev.conf
 
 cat <<'EOF' > /etc/udev/rules.d/45-i2c.rules
@@ -77,3 +88,5 @@ SUBSYSTEM=="i2c-dev", KERNEL=="i2c-[0-9]*", GROUP="i2c", MODE="0660"
 EOF
 
 chsh -s /usr/bin/fish "$USER_NAME"
+
+sed -i 's|command = "agreety --cmd /bin/sh"|command = "/usr/bin/dms-greeter --command niri"|' /etc/greetd/config.toml
