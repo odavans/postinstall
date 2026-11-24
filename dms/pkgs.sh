@@ -33,7 +33,6 @@ PKGS=(
     gvfs
     gvfs-mtp
     i2c-tools
-    iwd
     kdeconnect
     kimageformats
     lhasa
