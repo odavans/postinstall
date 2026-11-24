@@ -11,8 +11,6 @@ USER_DIRS=(
 
 mkdir -p "${USER_DIRS[@]}"
 
-cp /usr/share/applications/org.coolercontrol.CoolerControl.desktop "$HOME/.config/autostart/"
-
 curl -fsSL https://raw.githubusercontent.com/flightlessmango/MangoHud/master/data/MangoHud.conf -o "$HOME/.config/MangoHud/MangoHud.conf"
 
 CONF_FILE="$HOME/.config/MangoHud/MangoHud.conf"
