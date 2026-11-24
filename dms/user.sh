@@ -3,6 +3,7 @@
 USER_DIRS=(
     "$HOME/.config/autostart"
     "$HOME/.config/environment.d"
+    "$HOME/.config/fish"
     "$HOME/.config/MangoHud"
     "$HOME/.config/xdg-desktop-portal"
     "$HOME/.local/share/Steam"
