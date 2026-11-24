@@ -36,15 +36,7 @@ org.freedesktop.impl.portal.Secret=gnome-keyring
 org.freedesktop.impl.portal.RemoteDesktop=hypr-kdeconnect
 EOF
 
-FISH_CONF_DIR="$HOME/.config/fish"
-
-mkdir -p "$FISH_CONF_DIR"
-
-touch "$FISH_CONF_DIR/config.fish"
-
-if ! grep -q "set -g fish_greeting" "$FISH_CONF_DIR/config.fish"; then
-    echo "set -g fish_greeting" >> "$FISH_CONF_DIR/config.fish"
-fi
+echo "set -g fish_greeting" >> "$HOME/.config/fish/config.fish"
 
 for size in 16x16 22x22 24x24; do
   mkdir -p "$HOME/.local/share/icons/Papirus/$size/symbolic/apps"
