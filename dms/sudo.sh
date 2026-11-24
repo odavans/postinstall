@@ -76,6 +76,4 @@ cat <<'EOF' > /etc/udev/rules.d/45-i2c.rules
 SUBSYSTEM=="i2c-dev", KERNEL=="i2c-[0-9]*", GROUP="i2c", MODE="0660"
 EOF
 
-pkgfile -u
-
 chsh -s /usr/bin/fish "$USER_NAME"
