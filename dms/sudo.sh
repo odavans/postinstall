@@ -31,11 +31,6 @@ cat <<'EOF' > /etc/NetworkManager/conf.d/archer-c64.conf
 wifi.powersave = 2
 EOF
 
-cat <<'EOF' > /etc/NetworkManager/conf.d/iwd.conf
-[device]
-wifi.backend=iwd
-EOF
-
 groupadd -f i2c
 groupadd -f plugdev
 usermod -aG i2c,plugdev "$USER_NAME"
@@ -44,7 +39,6 @@ sensors-detect --auto > /dev/null
 
 systemctl enable coolercontrold
 systemctl enable greetd
-systemctl enable iwd
 
 cat <<'EOF' > /etc/modprobe.d/nvidia.conf
 options nvidia_drm modeset=1
