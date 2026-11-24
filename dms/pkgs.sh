@@ -22,7 +22,6 @@ PKGS=(
     file-roller
     firefox
     fish
-    flatpak
     gamemode
     gamescope
     geoclue
@@ -33,7 +32,6 @@ PKGS=(
     grsync
     gvfs
     gvfs-mtp
-    hyprland-guiutils
     i2c-tools
     kdeconnect
     kimageformats
@@ -49,7 +47,6 @@ PKGS=(
     lrzip
     mangohud
     nano
-    nautilus
     ntfs-3g
     ntfsprogs
     nvidia-open-dkms
