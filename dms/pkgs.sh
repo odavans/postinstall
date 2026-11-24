@@ -65,6 +65,7 @@ PKGS=(
     qt5-base
     qt6-tools
     rpmextract
+    seahorse
     squashfs-tools
     sshfs
     steam
