@@ -2,7 +2,7 @@
 
 USER_NAME=${SUDO_USER:-$(whoami)}
 
-cat <<EOF> /etc/polkit-1/rules.d/10-udisks2.rules
+cat <<EOF > /etc/polkit-1/rules.d/10-udisks2.rules
 polkit.addRule(function(action, subject) {
     if ((action.id == "org.freedesktop.udisks2.filesystem-mount-system" ||
          action.id == "org.freedesktop.udisks2.filesystem-mount") &&
@@ -12,7 +12,7 @@ polkit.addRule(function(action, subject) {
 });
 EOF
 
-cat <<EOF> /etc/udev/rules.d/50-hid.rules
+cat <<EOF > /etc/udev/rules.d/50-hid.rules
 SUBSYSTEM=="usb", ATTRS{idVendor}=="3434", MODE="0666"
 SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3434", MODE="0666"
 SUBSYSTEM=="usb", ATTRS{idVendor}=="373b", MODE="0666"
@@ -21,7 +21,7 @@ SUBSYSTEM=="usb", ATTRS{idVendor}=="1915", MODE="0666"
 SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1915", MODE="0666"
 EOF
 
-cat <<EOF> /etc/udev/rules.d/51-android.rules
+cat <<EOF > /etc/udev/rules.d/51-android.rules
 SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", MODE="0666", GROUP="plugdev"
 SUBSYSTEM=="usb", ATTR{idVendor}=="2717", MODE="0666", GROUP="plugdev"
 EOF
@@ -35,14 +35,14 @@ sensors-detect --auto > /dev/null
 systemctl enable coolercontrold
 systemctl enable pkgfile-update.timer
 
-cat <<EOF> /etc/modprobe.d/nvidia.conf
+cat <<EOF > /etc/modprobe.d/nvidia.conf
 options nvidia_drm modeset=1
 options nvidia NVreg_EnableResizableBar=1
 EOF
 
 mkinitcpio -P
 
-cat <<EOF> /etc/pam.d/greetd
+cat <<EOF > /etc/pam.d/greetd
 #%PAM-1.0
 
 auth       required     pam_securetty.so
@@ -62,7 +62,7 @@ fi
 echo "ntsync" > /etc/modules-load.d/ntsync.conf
 echo "i2c-dev" > /etc/modules-load.d/i2c-dev.conf
 
-cat <<EOF> /etc/udev/rules.d/45-i2c.rules
+cat <<EOF > /etc/udev/rules.d/45-i2c.rules
 SUBSYSTEM=="i2c-dev", KERNEL=="i2c-[0-9]*", GROUP="i2c", MODE="0660"
 EOF
 
