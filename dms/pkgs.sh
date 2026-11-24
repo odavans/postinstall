@@ -54,7 +54,7 @@ PKGS=(
     nvidia-settings
     nvidia-utils
     onnxruntime-cpu
-    os-prober
+    #os-prober
     p7zip
     papirus-icon-theme
     power-profiles-daemon
