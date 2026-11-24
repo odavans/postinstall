@@ -57,8 +57,9 @@ PKGS=(
     os-prober
     p7zip
     papirus-icon-theme
-    power-profiles-daemon
     pkgfile
+    power-profiles-daemon
+    proton-vpn-gtk-app
     python
     qbittorrent
     qt5-base
