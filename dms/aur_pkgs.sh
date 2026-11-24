@@ -5,7 +5,7 @@ AUR_PKGS=(
     heroic-games-launcher-bin
     hypr-kdeconnect-fix-git
     #nautilus-open-any-terminal
-    papirus-folders
+    #papirus-folders
     payload-dumper-go-bin
     protonup-qt-bin
     rustdesk-bin
