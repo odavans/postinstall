@@ -26,6 +26,16 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", MODE="0666", GROUP="plugdev"
 SUBSYSTEM=="usb", ATTR{idVendor}=="2717", MODE="0666", GROUP="plugdev"
 EOF
 
+cat <<EOF > /etc/NetworkManager/conf.d/archer-c64.conf
+[connection]
+wifi.powersave = 2
+EOF
+
+cat <<EOF > /etc/NetworkManager/conf.d/iwd.conf
+[device]
+wifi.backend=iwd
+EOF
+
 groupadd -f i2c
 groupadd -f plugdev
 usermod -aG i2c,plugdev "$USER_NAME"
