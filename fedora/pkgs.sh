@@ -42,7 +42,6 @@ PKGS=(
     steam
     topgrade
     wl-clipboard
-    xdg-desktop-portal-gnome
     xdg-user-dirs
     xorg-x11-drv-nvidia-cuda
 )
