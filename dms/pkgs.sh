@@ -5,8 +5,6 @@ PKGS=(
     android-tools
     android-udev
     archlinux-appstream-data
-    base-devel
-    binutils
     breeze-cursors
     bzip3
     cabextract
@@ -14,7 +12,6 @@ PKGS=(
     cdrtools
     celluloid
     coolercontrol
-    cpio
     crow-translate
     cups-pk-helper
     dpkg
@@ -59,7 +56,6 @@ PKGS=(
     pkgfile
     power-profiles-daemon
     proton-vpn-gtk-app
-    python
     qbittorrent
     qt5-base
     qt6-tools
@@ -79,8 +75,6 @@ PKGS=(
     webkitgtk-6.0
     wl-clipboard
     wtype
-    xdg-desktop-portal
-    xdg-desktop-portal-gtk
     xdg-user-dirs-gtk
     xorg-fonts-misc
     zip
