@@ -15,7 +15,6 @@ PKGS=(
     gnome-calculator
     gnome-keyring
     gnome-keyring-pam
-    #gnome-software
     gnome-text-editor
     google-noto-emoji-fonts
     grsync
@@ -36,8 +35,6 @@ PKGS=(
     loupe
     make
     mangohud
-    #nautilus
-    #nautilus-open-any-terminal
     papers
     papirus-icon-theme
     power-profiles-daemon
